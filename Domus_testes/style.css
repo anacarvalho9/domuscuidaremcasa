@@ -1,0 +1,418 @@
+/* Importar fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
+
+/* Variáveis CSS para cores */
+:root {
+    --primary-dark: #1a1a1a; 
+    --secondary-dark: #2c2c2c; 
+    --accent-gold: #e7c50e; 
+    --light-gold: #ffe760; 
+    --white-text: #f0f0f0; 
+    --pure-white: #FFFFFF; 
+    --dark-text: #333; 
+    --light-bg: #ffffff; 
+    --grey-bg: #f9f9f9; 
+    --border-color: #e0e0e0;
+	
+}
+
+/* Estilos Gerais */
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    background-color: var(--grey-bg);
+    color: var(--dark-text);
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 15px; 
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary-dark);
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+h1 { font-size: 2.8em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 1.6em; }
+
+p {
+    margin-bottom: 15px;
+}
+
+header {
+     background-color: #17303F  !important; 
+    color: var(--white-text); 
+    padding: 15px 0;
+    min-height: 80px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo {
+    height: 60px;
+    margin-right: 25px;
+    filter: brightness(1.2); 
+    transition: transform 0.3s ease-in-out;
+}
+
+header .logo:hover {
+    transform: scale(1.05);
+}
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+header nav li {
+    margin-left: 30px;
+}
+
+header nav a {
+    color: var(--white-text); 
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+}
+
+header nav a:hover,
+header nav a.current {
+    color: var(--pure-white);
+    border-color: border-color: var(--pure-white);
+}
+
+main {}
+
+section {
+    background: var(--light-bg);
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease-in-out;
+}
+
+section:hover {
+    transform: translateY(-5px);
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--accent-gold);
+    color: var(--primary-dark);
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+
+.button:hover {
+    background-color: var(--light-gold) !important; 
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+    border-color: var(--primary-dark);
+}
+
+#services h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#services .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.service-item {
+    background: var(--light-bg);
+    padding: 25px;
+    border-radius: 30px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.service-item:hover {
+    background-color: var(--grey-bg);
+    transform: translateY(-5px);
+}
+
+.service-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin: 0 auto 15px auto;
+    filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.1));
+}
+
+.service-item h3 {
+    color: var(--primary-dark);
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+#about-mission, #about-values {
+    background: var(--light-bg);
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+#about-values ul {
+    list-style: none;
+    padding: 0;
+}
+
+#about-values li {
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+    font-size: 1.1em;
+}
+
+#about-values li::before {
+    content: '✓';
+    color: var(--accent-gold);
+    font-weight: bold;
+    display: inline-block;
+    width: 1.5em;
+    margin-left: -1.5em;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+#contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--primary-dark);
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form input[type="tel"],
+#contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact-form input[type="text"]:focus,
+#contact-form input[type="email"]:focus,
+#contact-form input[type="tel"]:focus,
+#contact-form textarea:focus {
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.2);
+    outline: none;
+}
+
+#contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+#contact-form button {
+    width: auto;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-top: 10px;
+    color: var(--primary-dark);
+}
+
+footer {
+     background-color: #17303F  !important; 
+    color: var(--white-text);
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 40px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+}
+
+footer p {
+    margin: 0;
+    padding: 5px 0;
+    font-size: 0.95em;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul {
+        margin-top: 15px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav li {
+        margin: 10px 0;
+    }
+
+    #hero {
+        padding: 60px 20px;
+    }
+    #hero h1 {
+        font-size: 2.8em;
+        margin-bottom: 15px;
+    }
+    #hero p {
+        font-size: 1.2em;
+        margin-bottom: 25px;
+    }
+    .button {
+        padding: 13px 30px;
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 2.2em; }
+    h2 { font-size: 1.9em; }
+    h3 { font-size: 1.5em; }
+
+    #hero {
+        padding: 40px 15px;
+    }
+    #hero h1 {
+        font-size: 2.2em;
+    }
+    #hero p {
+        font-size: 1.1em;
+        margin-bottom: 20px;
+    }
+
+    .button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    section {
+        padding: 20px;
+    }
+}
+
+/* Hero Section (IMAGEM DE FUNDO E BANNER ESCURO) */
+#hero {
+    position: relative; 
+    width: 100%; 
+    min-height: 60vh; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    text-align: center;
+    overflow: hidden; 
+    margin-bottom: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 0; 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('images/hero_cuidados.jpg'); 
+    background-size: cover;
+    background-position: center;
+    color: var(--pure-white);
+}
+
+#hero h1 {
+    font-size: 4em; 
+    color: var(--pure-white) !important; 
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); 
+    margin-bottom: 25px;
+    line-height: 1.1;
+    position: relative; 
+    z-index: 2; 
+}
+
+#hero p {
+    font-size: 1.5em; 
+    color: var(--pure-white) !important; 
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    max-width: 750px;
+    margin: 0 auto 40px auto;
+    position: relative; 
+    z-index: 2; 
+}
+/* Basic styling for individual images */
+.about-image {
+    max-width: 100%; /* Ensures images don't overflow their container */
+    height: auto;    /* Maintains aspect ratio */
+    display: block;  /* Prevents extra space below the image */
+    margin-bottom: 20px; /* Adds space below each image */
+}
+
+/* Styling for a container holding two images (if you choose that option) */
+.about-images {
+    display: flex; /* Arranges images side-by-side */
+    gap: 20px; /* Adds space between the images */
+    justify-content: center; /* Centers the images if they don't fill the width */
+    margin-bottom: 30px; /* Adds space below the image container */
+    flex-wrap: wrap; /* Allows images to wrap to the next line on smaller screens */
+}
+
+.about-images .about-image {
+    flex: 1; /* Allows images to grow and shrink */
+    min-width: 250px; /* Ensures images don't get too small */
+}
+
+/* Optional: Adjust for smaller screens if you have two images */
+@media (max-width: 768px) {
+    .about-images {
+        flex-direction: column; /* Stacks images vertically on smaller screens */
+        align-items: center; /* Centers stacked images */
+    }
+}
